@@ -1,10 +1,11 @@
-FROM rust:nightly as builder
+FROM rustlang/rust:nightly as builder
 
 WORKDIR /usr/src/app
 
 COPY . .
 
-RUN cargo build --release
+RUN rustup component add rust-src && \
+    cargo build --release 
 
 # Now copy it into our base image.
 FROM gcr.io/distroless/cc-debian10
