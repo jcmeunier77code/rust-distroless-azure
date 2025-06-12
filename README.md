@@ -75,6 +75,13 @@ Note that it is a good practice to use `404 Not Found` to protect from requests 
 
 ### To build and run the docker image 
 
+Build the image 
 ```bash 
 docker build . -t rust-local-distroless
 ```
+
+Rue the image locally
+```bash
+docker run -it -p 8000:8000 rust-local-distroless
+```
+
